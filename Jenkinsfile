@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script{
-                        docker.withRegistry('https://public.ecr.aws/t2h5e0b7/', 'ecr:us-east-1:Jenkins-Credentials') {
+                        docker.withRegistry('https://public.ecr.aws/t2h5e0b7/', 'ecr:us-east-1:jenkins-credentials') {
                     app.push("${env.BUILD_NUMBER}")
                     app.push("latest")
                     }
